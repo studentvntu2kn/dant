@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стоматологічна клініка "Crystal  Smile"</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .navbar {
+            background-color: #0074d9;
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .navbar .clinic-name {
+            font-weight: 700;
+            font-size: 22px;
+            color: #ffffff;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            margin: 5px 15px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .navbar-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        blockquote {
+            font-size: 20px;
+            line-height: 1.8;
+            font-style: italic;
+            color: #555;
+            border-left: 5px solid #0074d9;
+            padding: 10px 20px;
+            margin: 40px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 800px;
+            position: relative;
+        }
+        blockquote::before {
+            content: "“";
+            font-size: 50px;
+            color: #0074d9;
+            position: absolute;
+            top: -20px;
+            left: 10px;
+        }
+        blockquote::after {
+            content: "”";
+            font-size: 50px;
+            color: #0074d9;
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+        }
+        blockquote p {
+            margin: 0;
+        }
+        .blockquote-author {
+            margin-top: 10px;
+            font-size: 16px;
+            text-align: right;
+            font-style: normal;
+            color: #0074d9;
+        }
+        .features {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .features h2 {
+            color: #0074d9;
+            margin-bottom: 20px;
+        }
+        .features ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        .features li {
+            margin-bottom: 15px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .team {
+            background-color: #eaf4fc;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .team h2 {
+            color: #0074d9;
+            margin-bottom: 20px;
+        }
+        .team .team-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .team .team-member {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+        .team .team-member h3 {
+            margin: 0;
+            color: #0074d9;
+        }
+        .team .team-member p {
+            margin: 5px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхнє меню -->
+    <nav class="navbar">
+        <span class="clinic-name">Стоматологічна клініка "YaIBalPrincess"</span>
+        <div class="navbar-links">
+            <a href="index.html">Головна</a>
+            <a href="html">Кабінет</a>
+            <a href="services.html">Послуги</a>
+            <a href="about.html">Про нас</a>
+            <a href="contact.html">Контакти</a>
+            <a href="review.html">Відгуки</a>
+            <a href=".html">Записатись на прийоми</a>
+        </div>
+    </nav>
+
+    <!-- Цитата -->
+    <blockquote>
+        <p>Ми впроваджуємо передові технології, щоб ваш візит до лікаря був максимально комфортним та ефективним. 
+        Лазерні технології гарантують відсутність травматичності, а сучасне обладнання дозволяє звести ризики до мінімуму. 
+        Завдяки персоналізованому підходу ми створюємо індивідуальні плани лікування, які враховують усі ваші побажання.</p>
+        <div class="blockquote-author">– Вова</div>
+    </blockquote>
+
+    <!-- Переваги -->
+    <div class="features">
+        <h2>Переваги нашої клініки</h2>
+        <ul>
+            <li><strong>Висока якість:</strong> Ми забезпечуємо винятковий сервіс, і 85% наших клієнтів приходять за рекомендацією друзів чи родичів.</li>
+            <li><strong>Фахівці зі стажем:</strong> Наша команда складається з досвідчених імплантологів, середній стаж яких становить 15 років.</li>
+            <li><strong>Новітні технології:</strong> Лазерні методи, цифрова діагностика та 3D моделювання забезпечують швидке та точне лікування.</li>
+            <li><strong>Персоналізований підхід:</strong> Ми враховуємо індивідуальні потреби кожного клієнта, створюючи комфортну атмосферу.</li>
+            <li><strong>Гнучка оплата:</strong> Пропонуємо доступні програми розтермінування для зручності клієнтів.</li>
+            <li><strong>Розташування:</strong> Наша клініка знаходиться в центрі Вінниці, що робить відвідування зручним для всіх.</li>
+        </ul>
+    </div>
+
+    <!-- Наша команда -->
+    <div class="team">
+        <h2>Наша команда</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>Володимир Болюх</h3>
+                <p>Frontend coder</p>
+            </div>
+            <div class="team-member">
+                <h3>Владислав Гаврилюк</h3>
+                <p>Backend coder</p>
+            </div>
+            <div class="team-member">
+                <h3>Діма Стрікс</h3>
+                <p>Frontend coder</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

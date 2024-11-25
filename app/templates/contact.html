@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Наша Стоматологія</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Мінімальні стилі для краси */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .navbar {
+            background-color: #0074d9;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0074d9;
+        }
+        .contact-item {
+            margin-bottom: 15px;
+        }
+        .contact-item label {
+            font-weight: 700;
+            display: block;
+        }
+        .contact-item span {
+            display: block;
+            margin-top: 5px;
+        }
+        .map {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхнє меню -->
+    <nav class="navbar">
+        <span class="clinic-name">Стоматологічна клініка "YaIBalPrincess"</span>
+        <div class="navbar-links">
+            <a href="../golovna/index.html">Головна</a>
+            <a href="../.html">Кабінет</a>
+            <a href="../poslygu/poslygu.html">Послуги</a>
+            <a href="../pronas/pronas.html">Про нас</a>
+            <a href="../contactu/contactu.html">Контакти</a>
+            <a href="../vidgyku/vidgyku.html">Відгуки</a>
+            <a href="../zapusatus/zapusatus.html">Записатись на прийоми</a>
+    </nav>
+
+    <!-- Контент сторінки -->
+    <div class="container">
+        <h1>Контакти</h1>
+        <p>Зв'яжіться з нами або завітайте до нашої стоматології за вказаними контактами:</p>
+        <div class="contact-item">
+            <label>Адреса:</label>
+            <span>м. Вінниця, вул. Пушкіна, 52</span>
+        </div>
+        <div class="contact-item">
+            <label>Телефон:</label>
+            <span>+38 ( 098 ) 522-14-88</span>
+        </div>
+        <div class="contact-item">
+            <label>Email:</label>
+            <span>yaibalprunscess@stomatologia.ua</span>
+        </div>
+        <div class="contact-item">
+            <label>Години роботи:</label>
+            <span>Пн-Пт: 9:00 - 19:00</span>
+            <span>Сб: 10:00 - 16:00</span>
+            <span>Нд: вихідний</span>
+        </div>
+        <div class="map">
+            <label>Ми на карті:</label>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.683389394692!2d28.471283915977596!3d49.23222147932454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472d57933557e791%3A0x8f20221779738fc3!2z0JrQvtGA0LjRgdC40LzQuNC9INCf0YDQvtC90L7RgdC60LjQuSDQutC-0LvQvtGA0YHQutC40Lkg0L7QsdC70LDQs9Cw!5e0!3m2!1suk!2sua!4v1700000000000" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</body>
+</html>
