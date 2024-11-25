@@ -1,157 +1,187 @@
+/* Загальні стилі */
 body {
+    background-color: #f3f4f6;
+    color: #333;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f3f4f6;
-    color: #333;
 }
 
-header {
-    background-color: #0074d9;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    position: relative;
+/* Стилі для секції "Про нас" */
+.about-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 30%;
 }
-
-.clinic-name {
-    font-weight: 700;
-    font-size: 22px;
-    color: #ffffff;
-    position: absolute;
-    top: 15px;
-    left: 20px;
+.about-card h3 {
+    color: #0074d9;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
-
-header a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    margin: 5px 15px;
-}
-
-.navbar-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.navbar-links a:hover {
-    text-decoration: underline;
-}
-
-
-.blockquote {
-    font-size: 20px;
-    line-height: 1.8;
-    font-style: italic;
+.about-card p {
     color: #555;
-    border-left: 5px solid #0074d9;
-    padding: 10px 20px;
-    margin: 40px auto;
+    font-size: 16px;
+}
+.about-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.about-details {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+.about-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 1000px;
+    padding: 30px;
+}
+.about-section h2 {
+    color: #0074d9;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Блок цитати */
+.blockquote {
     background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #0074d9;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.8;
+    margin: 40px auto;
     max-width: 800px;
+    padding: 10px 20px;
     position: relative;
 }
-.blockquote::before {
-    content: "“";
-    font-size: 50px;
+.blockquote-author {
     color: #0074d9;
-    position: absolute;
-    top: -20px;
-    left: 10px;
-}
-.blockquote::after {
-    content: "”";
-    font-size: 50px;
-    color: #0074d9;
-    position: absolute;
-    bottom: -20px;
-    right: 10px;
+    font-size: 16px;
+    font-style: normal;
+    margin-top: 10px;
+    text-align: right;
 }
 .blockquote p {
     margin: 0;
 }
-.blockquote-author {
-    margin-top: 10px;
-    font-size: 16px;
-    text-align: right;
-    font-style: normal;
+.blockquote::after {
+    bottom: -20px;
     color: #0074d9;
+    content: "”";
+    font-size: 50px;
+    position: absolute;
+    right: 10px;
+}
+.blockquote::before {
+    color: #0074d9;
+    content: "“";
+    font-size: 50px;
+    left: 10px;
+    position: absolute;
+    top: -20px;
 }
 
-
-.features {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.features h2 {
-    color: #0074d9;
-    margin-bottom: 20px;
-}
-.features ul {
-    padding: 0;
-    list-style-type: none;
-}
-.features li {
+/* Контактна інформація */
+.contact-item {
     margin-bottom: 15px;
-    font-size: 18px;
-    line-height: 1.6;
 }
-.team {
-    background-color: #eaf4fc;
-    padding: 50px 20px;
-    text-align: center;
+.contact-item label {
+    display: block;
+    font-weight: 700;
 }
-.team h2 {
-    color: #0074d9;
-    margin-bottom: 20px;
+.contact-item span {
+    display: block;
+    margin-top: 5px;
 }
-.team .team-grid {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.team .team-member {
+.container {
     background-color: #ffffff;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 200px;
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 20px;
 }
-.team .team-member h3 {
-    margin: 0;
+h1 {
     color: #0074d9;
-}
-.team .team-member p {
-    margin: 5px 0 0;
+    text-align: center;
 }
 
-/* Стилі для відгуків */
-.reviews-section {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/* Хедер */
+.clinic-name {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    left: 20px;
+    position: absolute;
+    top: 15px;
 }
-.reviews-section h2 {
-    text-align: center;
+header {
+    align-items: flex-end;
+    background-color: #0074d9;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px 20px;
+    position: relative;
+}
+header a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 15px;
+    text-decoration: none;
+}
+.navbar-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/* Секція "Герой" */
+.hero {
+    background-color: #eaf4fc;
     color: #0074d9;
-    font-size: 28px;
-    margin-bottom: 30px;
+    margin-top: 70px;
+    padding: 50px 20px;
 }
+.hero h1 {
+    color: #0074d9;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+
+/* Карти */
+.map {
+    margin-top: 30px;
+    text-align: center;
+}
+.map iframe {
+    border: none;
+    border-radius: 8px;
+    height: 300px;
+    width: 100%;
+}
+
+/* Відгуки */
 .review {
     border-bottom: 1px solid #ddd;
     padding: 20px 0;
@@ -160,153 +190,203 @@ header a {
     border-bottom: none;
 }
 .review-name {
-    font-weight: 700;
     color: #0074d9;
+    font-weight: 700;
 }
 .review-text {
-    margin-top: 10px;
-    font-size: 16px;
     color: #555;
+    font-size: 16px;
+    margin-top: 10px;
 }
-
-
-
-.hero {
-    background-color: #eaf4fc;
-    padding: 50px 20px;
-    color: #0074d9;
-    margin-top: 70px; /* додаємо відступ зверху */
+.reviews-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 900px;
+    padding: 30px;
 }
-.hero h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 36px;
-    margin: 0;
-    font-weight: 700;
+.reviews-section h2 {
     color: #0074d9;
+    font-size: 28px;
+    margin-bottom: 30px;
     text-align: center;
 }
-.services-section {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-}
-.services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+
+/* Послуги */
 .service-card {
     background-color: #ffffff;
-    width: 280px;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
     text-align: left;
     transition: transform 0.3s;
-    margin-top: 20px; /* додамо відступ між картками */
+    width: 280px;
 }
 .service-card:hover {
     transform: translateY(-5px);
-}
-.service-title {
-    font-weight: 700;
-    color: #0074d9;
-    font-size: 20px;
-    margin-bottom: 10px;
 }
 .service-description {
     font-size: 16px;
     margin-bottom: 10px;
 }
-.price {
-    font-size: 18px;
-    font-weight: 700;
+.service-title {
     color: #0074d9;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.services-section {
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 20px;
 }
 
-
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
+/* Команда */
+.team {
+    background-color: #eaf4fc;
+    padding: 50px 20px;
+    text-align: center;
+}
+.team .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+.team .team-member {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
 }
-h1 {
-    text-align: center;
+.team .team-member h3 {
     color: #0074d9;
+    margin: 0;
 }
-.contact-item {
+.team .team-member p {
+    margin: 5px 0 0;
+}
+.team h2 {
+    color: #0074d9;
+    margin-bottom: 20px;
+}
+
+/* Функціональні особливості */
+.features {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+.features h2 {
+    color: #0074d9;
+    margin-bottom: 20px;
+}
+.features li {
+    font-size: 18px;
+    line-height: 1.6;
     margin-bottom: 15px;
 }
-.contact-item label {
-    font-weight: 700;
-    display: block;
-}
-.contact-item span {
-    display: block;
-    margin-top: 5px;
-}
-.map {
-    margin-top: 30px;
-    text-align: center;
-}
-.map iframe {
-    width: 100%;
-    height: 300px;
-    border: none;
-    border-radius: 8px;
+.features ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 
+/* Секція форми */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Висота з урахуванням хедера */
+    background-color: #f3f4f6;
+    padding: 20px;
+}
 
-/* Стилі для секції про нас */
-.about-section {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 30px;
+.form-block {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-.about-section h2 {
+    padding: 30px 40px;
+    max-width: 400px;
+    width: 100%;
     text-align: center;
-    color: #0074d9;
-    font-size: 28px;
-    margin-bottom: 30px;
 }
 
-/* Стилі для квадратиків */
-.about-cards {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-.about-card {
-    width: 30%;
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.about-card h3 {
+.form-block h2 {
+    color: #0074d9;
     font-size: 24px;
-    color: #0074d9;
-    margin-bottom: 10px;
-}
-.about-card p {
-    font-size: 16px;
-    color: #555;
+    margin-bottom: 20px;
 }
 
-/* Стилі для детальних доповнень */
-.about-details {
+.form-block form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-block label {
+    font-weight: 700;
+    text-align: left;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-block input {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
     font-size: 16px;
-    line-height: 1.6;
     color: #555;
-    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-block input:focus {
+    border-color: #0074d9;
+    outline: none;
+}
+
+.form-block button {
+    background-color: #0074d9;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-block button:hover {
+    background-color: #005bb5;
+}
+
+.form-block p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 15px;
+}
+
+.form-block p a {
+    color: #0074d9;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.form-block p a:hover {
+    text-decoration: underline;
 }
