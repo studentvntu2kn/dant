@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>Crystal Smile | Авторизація</title>
+    <title>Crystal Smile | Реєстрація</title>
 </head>
 <body>
     <!-- Верхнє меню -->
@@ -22,35 +22,38 @@
 
     <main class="form-container">
         <div class="form-block">
-            <h2>Вхід</h2>
+            <h2>Реєстрація</h2>
 
             {% with messages = get_flashed_messages() %}
             {% if messages %}
-                <div class="notification is-danger">
+                <div class="notification">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM7.478 4.746c.07-.442.406-.746.854-.746s.784.304.854.746l.149.984a.768.768 0 0 1-.742.871H7.328a.768.768 0 0 1-.742-.871l.149-.984zM7 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
+                    </svg>
                     {{ messages[0] }}
                 </div>
             {% endif %}
             {% endwith %}
 
-            <form method="POST" action="/login">
-                <label for="login-phone">Номер</label>
-                <input type="text" id="login-phone" name="phone" placeholder="Введіть номер" required>
+            <form method="POST" action="/signup">
+                <label for="reg-phone">Ім'я</label>
+                <input type="text" id="reg-name" name="name" placeholder="Введіть своє ім'я">
 
-                <label for="login-password">Пароль</label>
-                <input type="password" id="login-password" name="password" placeholder="Введіть пароль" required>
+                <label for="reg-phone">Номер</label>
+                <input type="text" id="reg-phone" name="phone" placeholder="Введіть номер">
 
-                <!-- Блок для чекбокса -->
-                <div class="remember">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Запам'ятати мене</label>
-                </div>
+                <label for="reg-password">Пароль</label>
+                <input type="password" id="reg-password" name="password" placeholder="Введіть пароль">
 
+                <label for="reg-confirm-password">Повторіть пароль</label>
+                <input type="password" id="reg-confirm-password" name="confirm_password" placeholder="Повторіть пароль">
 
-                <button type="submit">Увійти</button>
+                <button type="submit">Зареєструватися</button>
             </form>
-            <p>Немає аккаунту? <a href="signup">Зареєструватися</a></p>
+            <p>Вже є аккаунт? <a href="login">Увійти</a></p>
         </div>
     </main>
+
 
     <footer>
         <div class="footer-container">

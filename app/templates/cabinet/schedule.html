@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Записатись на прийом</title>
+    <link rel="stylesheet" href="../static/css/cabinet-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <span class="clinic-name">Crystal Smile</span>
+        <div class="navbar-links">
+            <a href="/home">Головна</a>
+            <a href="/cabinet">Кабінет</a>
+            <a href="/services">Послуги</a>
+            <a href="/about">Про нас</a>
+            <a href="/contact">Контакти</a>
+            <a href="/review">Відгуки</a>
+        </div>
+    </header>
+
+    <main class="main-schedule">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/cabinet">Головна</a></li>
+                <li><a href="/cabinet/settings">Налаштування профілю</a></li>
+                <li><a href="">Запис на прийом</a></li>
+            </ul>
+            <div class="logout">
+                <a href="/logout">Вихід</a>
+            </div>
+        </aside>
+
+        <div class="schedule-form">
+            <h2>Записатись на прийом</h2>
+            <form method="POST">
+                <div class="schedule-form-group">
+                    <label for="name">Ваше ім'я</label>
+                    <input type="text" id="name" name="name" required placeholder="Введіть ваше ім'я">
+                </div>
+                <div class="schedule-form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Ваш телефон">
+                </div>
+                <div class="schedule-form-group">
+                    <label for="datetime">Бажана дата і час</label>
+                    <input type="datetime-local" id="datetime" name="datetime" required>
+                </div>
+
+
+
+                <div class="schedule-form-group">
+                    <label for="doctor">Лікар</label>
+                    <select id="doctor" name="doctor" required>
+                        <option value="">Оберіть Лікаря</option>
+                        <option value="1">Болюх Володимир</option>
+                        <option value="2">Гаврилюк Владислав</option>
+                        <option value="3">Коломієць Дімка</option>
+                    </select>
+                </div>
+                <div class="schedule-form-group">
+                    <label for="clinica">Клініка</label>
+                    <select id="clinica" name="clinica" required>
+                        <option value="">Оберіть Клініку</option>
+                        <option value="1">ВНТУ Корпус 1</option>
+                        <option value="2">ВНТУ Корпус 2</option>
+                        <option value="3">ВНТУ Корпус 5</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Записатись</button>
+            </form>
+        </div>
+
+        <!-- Список записів -->
+        <div class="schedule-appointment">
+            <h2>Ваші записи</h2>
+            {% if appointments %}
+                <div class="appointments-list">
+                    {% for appointment in appointments %}
+                        <div class="appointment-card">
+                            <div class="appointment-info">
+                                <p><strong>{{ appointment.name }}</strong></p>
+                                <p>{{ appointment.date.strftime('%d.%m.%Y %H:%M') }}</p>
+                                <p>Лікар: {{ appointment.doctor_name }}</p>
+                                <p>Клініка: {{ appointment.clinic_name }}</p>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="edit-btn" id="openEditModal">Редагувати</button>
+                                <!-- Форма для видалення запису -->
+                                <form action="{{ url_for('cabinet.delete_appointment', appointment_id=appointment.id) }}" method="POST">
+                                    <button type="submit" class="delete-btn" onclick="return confirm('Ви дійсно хочете видалити цей запис?')">Видалити</button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Немає записів.</p>
+            {% endif %}
+        </div>
+
+
+        <!-- Плашка з нагадуваннями -->
+        <div class="schedule-notification">
+            <h2>Нагадування</h2>
+
+            <div class="schedule-notification-item">
+                <label>SMS Нагадування</label>
+                <button class="toggle-btn {{ 'enabled' if current_user.sms_notifications else 'disabled' }}"
+                        data-type="sms"
+                        data-status="{{ 'enabled' if current_user.sms_notifications else 'disabled' }}">
+                    {{ 'Включено' if current_user.sms_notifications else 'Виключено' }}
+                </button>
+            </div>
+
+            <div class="schedule-notification-item">
+                <label>Viber Нагадування</label>
+                <button class="toggle-btn {{ 'enabled' if current_user.viber_notifications else 'disabled' }}"
+                        data-type="viber"
+                        data-status="{{ 'enabled' if current_user.viber_notifications else 'disabled' }}">
+                    {{ 'Включено' if current_user.viber_notifications else 'Виключено' }}
+                </button>
+            </div>
+        </div>
+
+        <!-- Модальне вікно -->
+        <div class="modal" id="editModal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <h2>Редагування запису</h2>
+                <form id="editForm">
+                    <div class="form-group">
+                        <label for="date">Перенести дату</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctor">Змінити лікаря</label>
+                        <select id="doctor" name="doctor" required>
+                            <option value="1">Лікар 1</option>
+                            <option value="2">Лікар 2</option>
+                            <option value="3">Лікар 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="clinic">Змінити клініку</label>
+                        <select id="clinic" name="clinic" required>
+                            <option value="1">Клініка 1</option>
+                            <option value="2">Клініка 2</option>
+                            <option value="3">Клініка 3</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="cancel-btn" id="cancelBtn">Скасувати запис</button>
+                        <button type="submit" class="save-btn">Зберегти зміни</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Ліва частина -->
+            <div class="footer-left">
+                <p>
+                    <span class="footer-icon">📍</span> Київ, вул. Єлизавети Чавдар, 7
+                </p>
+            </div>
+
+            <!-- Права частина -->
+            <div class="footer-right">
+                <p>
+                    <span class="footer-phone">0 800 441 523</span><br>
+                    <span class="footer-note">безкоштовно по Україні</span><br>
+                    <a href="mailto:dentart.contact@gmail.com" class="footer-email">dentart.contact@gmail.com</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Низ -->
+        <div class="footer-bottom">
+            <p>© 2024 Всі права захищені</p>
+        </div>
+    </footer>
+
+<script src="../static/js/cabinet.js"></script>
+</body>
+</html>

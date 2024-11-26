@@ -1,0 +1,620 @@
+/* Загальні стилі */
+body {
+    background-color: #f3f4f6;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Хедер */
+.clinic-name {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    left: 20px;
+    position: absolute;
+    top: 15px;
+}
+header {
+    align-items: flex-end;
+    background-color: #0074d9;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px 20px;
+    position: relative;
+}
+header a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 15px;
+    text-decoration: none;
+}
+/* Футер */
+footer {
+    background-color: #333; /* Тло */
+    color: #fff; /* Текст білий */
+    padding: 20px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+.footer-left p, .footer-right p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer-phone {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-note {
+    font-size: 14px;
+}
+
+.footer-email {
+    color: #00aced; /* Колір для посилання */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-email:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+.navbar-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/* Контейнер */
+.main-cabinet {
+    display: flex;
+    height: 600px;
+    background: url('../img/clinic-background.jpg') center/cover no-repeat; /* Фонова фотографія */
+}
+
+.main-schedule {
+    display: flex;
+    height: auto;
+    background: url('../img/clinic-background.jpg') center/cover no-repeat; /* Фонова фотографія */
+}
+
+/* Ліва панель */
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозоре біле тло */
+    color: #000;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0 10px 10px 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    background-color: #e0e0e5;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #c5c2cb;
+}
+
+.logout {
+    margin-top: auto;
+    text-align: center;
+}
+
+.logout a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    background-color: #e0e0e5;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.logout a:hover {
+    background-color: #c5c2cb;
+}
+
+/* Головний контент */
+.cabinet-home {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.cabinet-prev h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.cabinet-home-btn {
+    background-color: #0074d9;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cabinet-home-btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+
+
+
+
+/* Кабінет налаштувань */
+.cabinet-settings {
+    background-color: #ffffff;
+    padding: 25px;  /* Зменшено відступи */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    width: 400px
+}
+
+.cabinet-settings h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0074d9;
+}
+
+.form-group {
+    margin-bottom: 15px;  /* Зменшено відступи між елементами */
+    position: relative;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;  /* Зменшено відступ */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px 8px;  /* Зменшено внутрішні відступи */
+    font-size: 15px;  /* Зменшено розмір шрифту */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #0074d9;
+    box-shadow: 0 0 5px rgba(0, 116, 217, 0.5);
+}
+
+.button-settings {
+    width: 100%;
+    padding: 10px 0;  /* Зменшено висоту кнопки */
+    background-color: #0074d9;
+    color: #ffffff;
+    font-size: 15px;  /* Зменшено розмір шрифту */
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-settings:hover {
+    background-color: #005bb5;
+    transform: scale(1.02);
+}
+
+.button-settings:active {
+    transform: scale(0.98);
+}
+
+/* Додаткові стилі для блоку налаштувань */
+.cabinet-settings .form-group:last-child button {
+    margin-top: 10px;
+}
+
+.cabinet-settings .form-group button + button {
+    margin-top: 10px;
+}
+
+
+
+
+/* Форма запису */
+.schedule-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    max-height: 550px;
+    margin: 20px auto;
+}
+
+.schedule-form h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.schedule-form-group {
+    margin-bottom: 15px;
+}
+
+.schedule-form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.schedule-form-group input,
+.schedule-form-group select,
+.schedule-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.schedule-form-group textarea {
+    resize: none;
+}
+
+.submit-btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+/* Блок для записів */
+.schedule-appointment {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;  /* Зменшити ширину плашки */
+    margin: 20px auto;
+}
+
+/* Список записів */
+.appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Картка запису */
+.appointment-card {
+    display: flex;
+    flex-direction: column; /* Розміщення елементів в стовпчик */
+    justify-content: flex-start;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    max-width: 400px;  /* Зменшити розмір плашки */
+    margin: 0 auto;
+}
+
+.appointment-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Інформація про запис */
+.appointment-info {
+    margin-bottom: 10px;
+}
+
+.appointment-info p {
+    margin: 3px 0;
+    color: #555;
+    font-size: 14px; /* Зменшити шрифт */
+}
+
+/* Дії з записом (кнопки) */
+.appointment-actions {
+    display: flex;
+    flex-direction: column; /* Розміщення кнопок в стовпчик */
+    gap: 8px;
+    align-items: flex-start; /* Вирівняти кнопки по лівому краю */
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 6px 10px;  /* Зменшити розмір кнопок */
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;  /* Зменшити шрифт кнопок */
+    width: 100%;  /* Робить кнопки шириною по ширині плашки */
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+
+/* Плашка з нагадуваннями */
+.schedule-notification {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    max-height: 200px;
+    margin: 20px auto;
+}
+
+.schedule-notification h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Контейнер для елемента оповіщення */
+.schedule-notification-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-notification-item:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Лейбл для типу оповіщення */
+.schedule-notification-item label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Кнопка для включення/вимкнення */
+.toggle-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-btn.enabled {
+    background-color: #28a745; /* Зелений для "Включено" */
+}
+
+.toggle-btn.disabled {
+    background-color: #dc3545; /* Червоний для "Виключено" */
+}
+
+.toggle-btn:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+}
+
+.toggle-btn.enabled:hover {
+    background-color: #218838; /* Темно-зелений при наведенні */
+}
+
+.toggle-btn.disabled:hover {
+    background-color: #c82333; /* Темно-червоний при наведенні */
+}
+
+.toggle-btn:active {
+    transform: scale(0.95);
+}
+
+
+
+
+
+/* Стилі для модального вікна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding-top: 60px;
+}
+
+/* Стилі для контенту в модальному вікні */
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Кнопка для закриття модального вікна */
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стилі для форми в модальному вікні */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-btn,
+.save-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+.save-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.cancel-btn:hover {
+    background-color: #d32f2f;
+}
+
+.save-btn:hover {
+    background-color: #388e3c;
+}
+
+
+
+
+
+
+
+

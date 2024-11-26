@@ -1,6 +1,14 @@
+import os
+from . import db
 from flask import Blueprint, render_template
+from flask import send_from_directory
 
 main = Blueprint('main', __name__)
+
+@main.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(main.root_path, 'app/static'),
+                               'favicon.ico', mimetype='img/favicon.ico')
 
 @main.route('/')
 def home():
@@ -26,11 +34,3 @@ def services():
 def contact():
     return render_template('info/contact.html')
 
-
-@main.route('/register')
-def register():
-    return render_template('auth/register.html')
-
-@main.route('/login')
-def login():
-    return render_template('auth/login.html')

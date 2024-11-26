@@ -144,6 +144,64 @@ header a {
     margin: 5px 15px;
     text-decoration: none;
 }
+/* Футер */
+footer {
+    background-color: #333; /* Тло */
+    color: #fff; /* Текст білий */
+    padding: 20px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+.footer-left p, .footer-right p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer-phone {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-note {
+    font-size: 14px;
+}
+
+.footer-email {
+    color: #00aced; /* Колір для посилання */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-email:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
 .navbar-links {
     display: flex;
     flex-wrap: wrap;
@@ -318,7 +376,7 @@ header a {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px 40px;
+    padding: 20px 40px;
     max-width: 400px;
     width: 100%;
     text-align: center;
@@ -390,3 +448,51 @@ header a {
 .form-block p a:hover {
     text-decoration: underline;
 }
+
+.remember {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.remember input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.remember label {
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+}
+
+
+
+/* Сповіщення*/
+.notification {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 0.375rem;
+    color: #721c24;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.notification svg {
+    margin-right: 0.5rem;
+    fill: #721c24;
+}
+
+.notification a {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.notification a:hover {
+    color: #003f7f;
+}
+

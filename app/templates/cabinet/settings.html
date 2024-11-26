@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Налаштування профілю</title>
+    <link rel="stylesheet" href="../static/css/cabinet-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <span class="clinic-name">Crystal Smile</span>
+        <div class="navbar-links">
+            <a href="/home">Головна</a>
+            <a href="/cabinet">Кабінет</a>
+            <a href="/services">Послуги</a>
+            <a href="/about">Про нас</a>
+            <a href="/contact">Контакти</a>
+            <a href="/review">Відгуки</a>
+        </div>
+    </header>
+
+    <main class="main-cabinet">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/cabinet">Головна</a></li>
+                <li><a href="">Налаштування профілю</a></li>
+                <li><a href="/cabinet/schedule">Запис на прийом</a></li>
+            </ul>
+            <div class="logout">
+                <a href="/logout">Вихід</a>
+            </div>
+        </aside>
+
+        <!-- Головний контент -->
+        <div class="cabinet-settings">
+            <h2>Зміна профіля</h2>
+
+            <!-- Зміна паролю -->
+            <form method="POST">
+                <div class="form-group">
+                    <label for="current-password">Старий пароль</label>
+                    <input type="password" id="current-password" name="current-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Новий пароль</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Підтвердьте новий пароль</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="button-settings">Підтвердити зміни</button>
+                </div>
+            </form>
+
+            <!-- Зміна імені -->
+            <form method="POST">
+                <div class="form-group">
+                    <label for="display-name">Ваше ім'я</label>
+                    <input type="text" id="display-name" name="display-name" value="{{ name }}" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="button-settings">Зберегти зміни</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Ліва частина -->
+            <div class="footer-left">
+                <p>
+                    <span class="footer-icon">📍</span> Київ, вул. Єлизавети Чавдар, 7
+                </p>
+            </div>
+
+            <!-- Права частина -->
+            <div class="footer-right">
+                <p>
+                    <span class="footer-phone">0 800 441 523</span><br>
+                    <span class="footer-note">безкоштовно по Україні</span><br>
+                    <a href="mailto:dentart.contact@gmail.com" class="footer-email">dentart.contact@gmail.com</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Низ -->
+        <div class="footer-bottom">
+            <p>© 2024 Всі права захищені</p>
+        </div>
+    </footer>
+</body>
+</html>
