@@ -70,13 +70,14 @@ def signup_post():
     db.session.commit()
 
     # Перенаправлення на сторінку входу після успішної реєстрації
-    flash('Реєстрація успішна, будь ласка, увійдіть')
+    flash('Реєстрація успішна, будь ласка, увійдіть', 'success')
     return redirect(url_for('auth.login'))
 
 
 
 @auth.route('/login', methods=['POST'])
 def login_post():
+    print("11")
     phone = request.form.get('phone')
     password = request.form.get('password')
     remember = True if request.form.get('remember') else False

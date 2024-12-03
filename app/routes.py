@@ -5,11 +5,6 @@ from flask import send_from_directory
 
 main = Blueprint('main', __name__)
 
-@main.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(main.root_path, 'app/static'),
-                               'favicon.ico', mimetype='img/favicon.ico')
-
 @main.route('/')
 def home():
     return render_template('index.html')
@@ -33,4 +28,8 @@ def services():
 @main.route('/contact')
 def contact():
     return render_template('info/contact.html')
+
+@main.route('/doctors')
+def doctors():
+    return render_template('info/doctors.html')
 

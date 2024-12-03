@@ -17,6 +17,7 @@
             <a href="/about">Про нас</a>
             <a href="/contact">Контакти</a>
             <a href="/review">Відгуки</a>
+            <a href="/doctors">Лікарі</a>
         </div>
     </header>
 
@@ -24,13 +25,16 @@
         <div class="form-block">
             <h2>Вхід</h2>
 
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="notification is-danger">
-                    {{ messages[0] }}
-                </div>
-            {% endif %}
+            {% with messages = get_flashed_messages(with_categories=True) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="notification {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
             {% endwith %}
+
 
             <form method="POST" action="/login">
                 <label for="login-phone">Номер</label>

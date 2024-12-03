@@ -383,6 +383,11 @@ footer {
     margin: 0 auto;
 }
 
+.past-appointment {
+    background-color: #fb3b29;
+    color: white;
+}
+
 .appointment-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
